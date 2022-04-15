@@ -8,7 +8,7 @@ const CardStyled = styled.div`
     height: 400px;
     width: 400px;
     margin: 15px;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.56);
+    border: 3px solid black;
     border-radius: 10%;
 `;
 

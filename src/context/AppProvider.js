@@ -8,12 +8,14 @@ export default function AppProvider({ children }) {
   const [documents, setDocuments] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const pages = Math.ceil(documents.length / 7)
+  const pages = Math.ceil(documents.length / 7);
   const startIndex = currentPage * 7;
   const endIndex = startIndex + 7;
   const docsOnPage = documents.slice(startIndex, endIndex);
 
   const context = {
+    pages,
+    documents,
     setDocuments,
     setCurrentPage,
     docsOnPage,

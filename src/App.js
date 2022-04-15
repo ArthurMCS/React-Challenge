@@ -4,8 +4,8 @@ import './App.css';
 import { React, useEffect, useContext } from 'react';
 import getDocs from './services/docApi';
 import CardContainer from './components/CardContainer';
-import Pagination from './components/Pagination';
 import AppContext from './context/AppContext';
+import Header from './components/Header';
 
 function App() {
   const { setDocuments } = useContext(AppContext);
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <Pagination />
+      <Header />
       <CardContainer />
     </div>
   );

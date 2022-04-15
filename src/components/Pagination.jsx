@@ -5,19 +5,18 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
 export default function Pagination() {
-  const NUMBER_OF_PAGES = 3;
-  const { setCurrentPage } = useContext(AppContext);
+  const { pages, setCurrentPage } = useContext(AppContext);
   return (
     <div>
       Pages:
       {Array
-        .from(Array(NUMBER_OF_PAGES))
+        .from(Array(pages))
         .map((_n, index) => (
 
           <button
             type="button"
             key={index}
-            value={index + 1}
+            value={index}
             onClick={(e) => setCurrentPage(Number(e.target.value))}
           >
             {index + 1}
