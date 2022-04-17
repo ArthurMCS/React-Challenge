@@ -5,7 +5,8 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
 export default function Pagination() {
-  const { pages, setCurrentPage } = useContext(AppContext);
+  const { pages, setCurrentPage, currentPage } = useContext(AppContext);
+
   return (
     <div>
       Pages:
@@ -15,6 +16,7 @@ export default function Pagination() {
 
           <button
             type="button"
+            style={index === currentPage ? { backgroundColor: 'gray' } : null}
             key={index}
             value={index}
             onClick={(e) => setCurrentPage(Number(e.target.value))}
