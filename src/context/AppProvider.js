@@ -8,10 +8,9 @@ import getDocs from '../services/docApi';
 export default function AppProvider({ children }) {
   const [documents, setDocuments] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [documentsFiltered, setDocsFiltered] = useState([]);
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({});
-
-  const pages = Math.ceil(documents.length / 7);
 
   useEffect(() => {
     getDocs().then((docs) => {
@@ -20,7 +19,6 @@ export default function AppProvider({ children }) {
   }, []);
 
   const context = {
-    pages,
     documents,
     setDocuments,
     currentPage,
@@ -29,6 +27,8 @@ export default function AppProvider({ children }) {
     setSearch,
     filters,
     setFilters,
+    documentsFiltered,
+    setDocsFiltered,
   };
 
   return (

@@ -79,7 +79,7 @@ export default function FormComponent() {
           <Form.Label>Number</Form.Label>
           <Form.Control
             type="text"
-            placeholder="year/number"
+            placeholder="year/number or Draft"
             value={numberFilter}
             onChange={(e) => setNumberFilter(e.target.value.toLocaleLowerCase())}
           />
