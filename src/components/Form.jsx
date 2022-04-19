@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import FormContainerStyled from '../stledComponents/FormStyled';
 
 /* No campo de filtragem por data, eu utilizei um type month, pois no json existem
-faturas do dia 21 de fevereiro (uma data inválida), por isso achei melhor utilizar
+faturas do dia 31 de fevereiro (uma data inválida), por isso achei melhor utilizar
 esse tipo de input  */
 
 export default function FormComponent() {
@@ -23,10 +23,10 @@ export default function FormComponent() {
   const [valueFilter, setValueFilter] = useState(0);
 
   const handleSubmit = (e) => {
-    /* Esta dunc fica encarregada de lidar com o submit do forms,
+    /* Esta função fica encarregada de lidar com o submit do forms,
     além disso ela salva as informações no estado geral da aplicação
     com o setFilters que também vem do estado geral, por último ela
-    coloca a paginação na pagina inicial  */
+    coloca a paginação na página inicial  */
 
     e.preventDefault();
 
@@ -44,7 +44,7 @@ export default function FormComponent() {
 
   const handleSearch = (e) => {
   /* Esta func basicamente cuida do input text que salva a mudança no estado do componente
-     e coloca a paginação na pagina inicial   */
+     e coloca a paginação na página inicial   */
     setSearch(e);
     setCurrentPage(0);
   };
