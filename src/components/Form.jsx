@@ -4,6 +4,10 @@ import AppContext from '../context/AppContext';
 import 'bootstrap/dist/css/bootstrap.css';
 import FormContainerStyled from '../stledComponents/FormStyled';
 
+/* No campo de filtragem por data, eu utilizei um type month, pois no json existem
+faturas do dia 21 de fevereiro (uma data inválida), por isso achei melhor utilizar
+esse tipo de input  */
+
 export default function FormComponent() {
   const {
     search,
@@ -19,6 +23,11 @@ export default function FormComponent() {
   const [valueFilter, setValueFilter] = useState(0);
 
   const handleSubmit = (e) => {
+    /* Esta dunc fica encarregada de lidar com o submit do forms,
+    além disso ela salva as informações no estado geral da aplicação
+    com o setFilters que também vem do estado geral, por último ela
+    coloca a paginação na pagina inicial  */
+
     e.preventDefault();
 
     const filters = {
@@ -34,6 +43,8 @@ export default function FormComponent() {
   };
 
   const handleSearch = (e) => {
+  /* Esta func basicamente cuida do input text que salva a mudança no estado do componente
+     e coloca a paginação na pagina inicial   */
     setSearch(e);
     setCurrentPage(0);
   };
@@ -44,6 +55,7 @@ export default function FormComponent() {
         <Form.Group>
           <Form.Label>Name</Form.Label>
           <Form.Control
+            data-testid="name-input"
             type="text"
             placeholder="Name"
             value={search}
@@ -55,6 +67,7 @@ export default function FormComponent() {
           <Form.Select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
+            data-testid="status-input"
           >
             <option>Any</option>
             <option>Draft</option>
@@ -68,6 +81,7 @@ export default function FormComponent() {
           <Form.Select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
+            data-testid="type-input"
           >
             <option>Any</option>
             <option>Invoice</option>
@@ -101,7 +115,11 @@ export default function FormComponent() {
             onChange={(e) => setValueFilter(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button
+          variant="primary"
+          type="submit"
+          data-testid="btn-submit"
+        >
           Submit
         </Button>
       </Form>

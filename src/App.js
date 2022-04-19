@@ -5,14 +5,17 @@ import { React } from 'react';
 import FormComponent from './components/Form';
 import Pagination from './components/Pagination';
 import TableComponent from './components/Table';
+import AppProvider from './context/AppProvider';
 
 function App() {
   return (
-    <div className="App">
-      <FormComponent />
-      <Pagination />
-      <TableComponent />
-    </div>
+    <AppProvider>
+      <div className="App">
+        <FormComponent />
+        <Pagination />
+        <TableComponent />
+      </div>
+    </AppProvider>
   );
 }
 

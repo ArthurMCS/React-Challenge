@@ -22,6 +22,10 @@ export default function TableComponent() {
     valueFilter,
   } = filters;
 
+  /* Aqui eu fiz uma conta para saber quantos documentos vão aparecer por página,
+     assim a primeira página vai possuir os 7 primeiros documentos, já a segunda
+     vai possuir do 7 ao 14 e assim por diante. Estes índices são utilizados na
+     função slice no retorno do componente */
   const startIndex = currentPage * 7;
   const endIndex = startIndex + 7;
 
@@ -40,6 +44,8 @@ export default function TableComponent() {
     </thead>
   );
 
+  /* A função 'filter' filtra as faturas usando os filtros escolhidos ou, se não houver nenhum,
+    a função retorna o array original */
   const filter = () => {
     let docsFiltered = search.length > 0
       ? documents.filter((doc) => (doc.client_name.toLowerCase().includes(search)))
@@ -72,8 +78,9 @@ export default function TableComponent() {
     setDocsFiltered(state);
   });
 
+  /* Aqui eu utilizo o slice com os índices calculados lá em cima  */
   const docs = () => state.slice(startIndex, endIndex).map((doc, index) => (
-    <tr key={index}>
+    <tr key={index} data-testid="table-row">
       <td>{doc.client_name}</td>
       <td>{doc.status}</td>
       <td>{doc.type}</td>
