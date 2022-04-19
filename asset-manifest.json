@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ArthurMCS.io/React-Challenge/static/css/main.bea07eb7.css",
+    "main.js": "/ArthurMCS.io/React-Challenge/static/js/main.930cc757.js",
+    "static/js/787.dfc11a1a.chunk.js": "/ArthurMCS.io/React-Challenge/static/js/787.dfc11a1a.chunk.js",
+    "index.html": "/ArthurMCS.io/React-Challenge/index.html",
+    "main.bea07eb7.css.map": "/ArthurMCS.io/React-Challenge/static/css/main.bea07eb7.css.map",
+    "main.930cc757.js.map": "/ArthurMCS.io/React-Challenge/static/js/main.930cc757.js.map",
+    "787.dfc11a1a.chunk.js.map": "/ArthurMCS.io/React-Challenge/static/js/787.dfc11a1a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bea07eb7.css",
+    "static/js/main.930cc757.js"
+  ]
+}
