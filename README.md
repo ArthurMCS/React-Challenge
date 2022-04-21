@@ -7,7 +7,7 @@ Este projeto visa resolver o desafio de exibir uma lista de faturas, que podem s
 This project aims to solve the challenge of displaying a list of invoices, which can be filtered and paginated through this list.
 ## Tecnologias utilizadas / Technologies used
 
-React, React Hooks (useState, useEffect, useContext), styled-components, react-bootstrap, ESlint.
+React, React Hooks (useState, useEffect, useContext), Context-API, styled-components, react-bootstrap, ESlint.
 ## Demonstração / Demonstration
 
 Paginação / Pagination :
